@@ -36,8 +36,6 @@ export default {
             return;
         }
 
-        
-
         const response = await fetch(`https://registercoach-69de4-default-rtdb.firebaseio.com/coaches.json`);
         const responseData = await response.json();
         
@@ -51,10 +49,10 @@ export default {
         for (const key in responseData) {
             const coach = {
                 id: key,
-                firstName: responseData[key].firstname,
-                lastName: responseData[key].lastname,
+                firstName: responseData[key].firstName,
+                lastName: responseData[key].lastName,
                 description: responseData[key].description,
-                hourlyRate: responseData[key].rate,
+                hourlyRate: responseData[key].hourlyRate,
                 areas: responseData[key].areas,
             };
             coaches.push(coach);
